@@ -40,7 +40,7 @@ def evalAccount(username):
     pos_count = 0
 
     if len(pd.value_counts(result)) <= 1:
-        if result[0] == 4':
+        if result[0] == 4:
             pos_count = len(result)
         else:
             neg_count = len(result)
