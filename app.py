@@ -40,16 +40,16 @@ def evalAccount(username):
     pos_count = 0
 
     if len(pd.value_counts(result)) <= 1:
-        if result[0] == 'pos':
+        if result[0] == 4':
             pos_count = len(result)
         else:
             neg_count = len(result)
     else:
-        neg_count = pd.value_counts(result)['neg']
-        pos_count = pd.value_counts(result)['pos']
+        neg_count = pd.value_counts(result)[0]
+        pos_count = pd.value_counts(result)[4]
         
-        neg_perc = pd.value_counts(result)['neg']/200 * 100
-        pos_perc = pd.value_counts(result)['pos']/200 * 100
+        neg_perc = pd.value_counts(result)[0]/200 * 100
+        pos_perc = pd.value_counts(result)[4]/200 * 100
 
     if neg_count > pos_count:
         msg = "I found out that the percentage of the negative tweets is {}% compared to the positive ones.".format(neg_perc)
