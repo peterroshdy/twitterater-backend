@@ -7,7 +7,7 @@ import json
 app = Flask(__name__)
 
 def getTweets(username):
-    count = 200
+    count = 100
     # Creation of query object
     tweetCriteria = got.manager.TweetCriteria().setUsername(username).setMaxTweets(count)
     
@@ -48,8 +48,8 @@ def evalAccount(username):
         neg_count = pd.value_counts(result)[0]
         pos_count = pd.value_counts(result)[4]
         
-        neg_perc = pd.value_counts(result)[0]/200 * 100
-        pos_perc = pd.value_counts(result)[4]/200 * 100
+        neg_perc = pd.value_counts(result)[0]/100 * 100
+        pos_perc = pd.value_counts(result)[4]/100 * 100
 
     if neg_count > pos_count:
         msg = "I found out that the percentage of the negative tweets is {}% compared to the positive ones.".format(neg_perc)
